@@ -1,0 +1,1165 @@
+{
+	"info": {
+		"_postman_id": "5e9086b5-17db-45cf-b904-223381c78760",
+		"name": "API REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39125183"
+	},
+	"item": [
+		{
+			"name": "GET - Seleccion de un dato o  campo especifico",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "pfwAvABFH7eyPS5QT3HeMMa1Nu34Bh",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{endpoint}}courses?select=*",
+					"host": [
+						"{{endpoint}}courses"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Filtro de un solo valor",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "pfwAvABFH7eyPS5QT3HeMMa1Nu34Bh",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/courses?select=id_course,title_course,description_course&linkTo=title_course&equalTo=Node: De cero a experto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "id_course,title_course,description_course"
+						},
+						{
+							"key": "linkTo",
+							"value": "title_course"
+						},
+						{
+							"key": "equalTo",
+							"value": "Node: De cero a experto"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Filtro de varios valores",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "pfwAvABFH7eyPS5QT3HeMMa1Nu34Bh",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/courses?select=id_course,title_course,description_course,id_instructor_course&linkTo=title_course&equalTo=Node: De cero a experto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "id_course,title_course,description_course,id_instructor_course"
+						},
+						{
+							"key": "linkTo",
+							"value": "title_course"
+						},
+						{
+							"key": "equalTo",
+							"value": "Node: De cero a experto"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Ordenar datos sin filtros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/courses?select=*&orderBy=title_course&orderMode=ASC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "orderBy",
+							"value": "title_course"
+						},
+						{
+							"key": "orderMode",
+							"value": "ASC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Ordenar datos con filtros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/courses?select=*&orderBy=title_course&orderMode=ASC&linkTo=id_instructor_course&equalTo=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "orderBy",
+							"value": "title_course"
+						},
+						{
+							"key": "orderMode",
+							"value": "ASC"
+						},
+						{
+							"key": "linkTo",
+							"value": "id_instructor_course"
+						},
+						{
+							"key": "equalTo",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Limitar datos sin filtros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/courses?select=*&startAt=0&endAt=5&orderBy=id_course&orderMode=ASC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "startAt",
+							"value": "0"
+						},
+						{
+							"key": "endAt",
+							"value": "5"
+						},
+						{
+							"key": "orderBy",
+							"value": "id_course"
+						},
+						{
+							"key": "orderMode",
+							"value": "ASC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Limitar datos con filtros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/courses?select=*&orderBy=id_course&orderMode=ASC&linkTo=id_instructor_course&equalTo=2&startAt=0&endAt=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "orderBy",
+							"value": "id_course"
+						},
+						{
+							"key": "orderMode",
+							"value": "ASC"
+						},
+						{
+							"key": "linkTo",
+							"value": "id_instructor_course"
+						},
+						{
+							"key": "equalTo",
+							"value": "2"
+						},
+						{
+							"key": "startAt",
+							"value": "0"
+						},
+						{
+							"key": "endAt",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Relacion entre dos tablas sin filtros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/relations?rel=courses,instructors&type=course,instructor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"relations"
+					],
+					"query": [
+						{
+							"key": "rel",
+							"value": "courses,instructors"
+						},
+						{
+							"key": "type",
+							"value": "course,instructor"
+						},
+						{
+							"key": "startAt",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "endAt",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "select",
+							"value": "name_intructor,title_course,id_course",
+							"disabled": true
+						},
+						{
+							"key": "orderBy",
+							"value": "id_course",
+							"disabled": true
+						},
+						{
+							"key": "orderMode",
+							"value": "ASC",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Relacion entre dos tablas sin filtros pero con condiciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/relations?rel=courses,instructors&type=course,instructor&startAt=0&endAt=2&select=name_intructor,title_course,id_course&orderBy=id_course&orderMode=ASC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"relations"
+					],
+					"query": [
+						{
+							"key": "rel",
+							"value": "courses,instructors"
+						},
+						{
+							"key": "type",
+							"value": "course,instructor"
+						},
+						{
+							"key": "startAt",
+							"value": "0"
+						},
+						{
+							"key": "endAt",
+							"value": "2"
+						},
+						{
+							"key": "select",
+							"value": "name_intructor,title_course,id_course"
+						},
+						{
+							"key": "orderBy",
+							"value": "id_course"
+						},
+						{
+							"key": "orderMode",
+							"value": "ASC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Relacion entre dos tablas con filtros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/relations?rel=courses,instructors&type=course,instructor&linkTo=username_instructor&equalTo=victor&select=name_intructor,title_course,id_course,username_instructor&orderBy=id_course&orderMode=DESC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"relations"
+					],
+					"query": [
+						{
+							"key": "rel",
+							"value": "courses,instructors"
+						},
+						{
+							"key": "type",
+							"value": "course,instructor"
+						},
+						{
+							"key": "linkTo",
+							"value": "username_instructor"
+						},
+						{
+							"key": "equalTo",
+							"value": "victor"
+						},
+						{
+							"key": "select",
+							"value": "name_intructor,title_course,id_course,username_instructor"
+						},
+						{
+							"key": "orderBy",
+							"value": "id_course"
+						},
+						{
+							"key": "orderMode",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Buscador sin filtro de un solo valor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/courses?select=*&linkTo=title_course&search=De cero a experto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "linkTo",
+							"value": "title_course"
+						},
+						{
+							"key": "search",
+							"value": "De cero a experto"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Buscador con filtros de un solo valor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/courses?select=*&linkTo=title_course,id_instructor_course&search=PHP_6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "linkTo",
+							"value": "title_course,id_instructor_course"
+						},
+						{
+							"key": "search",
+							"value": "PHP_6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Buscador con filtros entre tablas relacionadas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/relations?rel=courses,instructors&type=course,instructor&select=title_course,name_intructor,username_instructor&linkTo=username_instructor&search=victor_3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"relations"
+					],
+					"query": [
+						{
+							"key": "rel",
+							"value": "courses,instructors"
+						},
+						{
+							"key": "type",
+							"value": "course,instructor"
+						},
+						{
+							"key": "select",
+							"value": "title_course,name_intructor,username_instructor"
+						},
+						{
+							"key": "linkTo",
+							"value": "username_instructor"
+						},
+						{
+							"key": "search",
+							"value": "victor_3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Seleccion de rango por fechas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "pfwAvABFH7eyPS5QT3HeMMa1Nu34Bh",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/courses?select=*&between1=2018-01-09&between2=2020-12-30&linkTo=date_created_course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "between1",
+							"value": "2018-01-09"
+						},
+						{
+							"key": "between2",
+							"value": "2020-12-30"
+						},
+						{
+							"key": "linkTo",
+							"value": "date_created_course"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Seleccion de rango por fechas con filtros",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "pfwAvABFH7eyPS5QT3HeMMa1Nu34Bh",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/courses?select=*&between1=2018-01-09&between2=2020-12-30&linkTo=date_created_course&filterTo=id_instructor_course&inTo=2,3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "between1",
+							"value": "2018-01-09"
+						},
+						{
+							"key": "between2",
+							"value": "2020-12-30"
+						},
+						{
+							"key": "linkTo",
+							"value": "date_created_course"
+						},
+						{
+							"key": "filterTo",
+							"value": "id_instructor_course"
+						},
+						{
+							"key": "inTo",
+							"value": "2,3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Seleccion de rango por fechas con filtros y tablas relacionadas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/relations?rel=courses,instructors&type=course,instructor&select=*&between1=2018-01-09&between2=2024-12-30&linkTo=instructors.date_created_course&filterTo=id_instructor_course&inTo=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"relations"
+					],
+					"query": [
+						{
+							"key": "rel",
+							"value": "courses,instructors"
+						},
+						{
+							"key": "type",
+							"value": "course,instructor"
+						},
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "between1",
+							"value": "2018-01-09"
+						},
+						{
+							"key": "between2",
+							"value": "2024-12-30"
+						},
+						{
+							"key": "linkTo",
+							"value": "instructors.date_created_course"
+						},
+						{
+							"key": "filterTo",
+							"value": "id_instructor_course"
+						},
+						{
+							"key": "inTo",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Extraemos los datos del formulario y procedemos a guardar el registro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "pfwAvABFH7eyPS5QT3HeMMa1Nu34Bh",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id_instructor_course",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "title_course",
+							"value": "Aprende con PHP",
+							"type": "text"
+						},
+						{
+							"key": "description_course",
+							"value": "Sistema de ventas completo",
+							"type": "text"
+						},
+						{
+							"key": "image_course",
+							"value": "https://i.udemycdn.com/course/480x270/1265942_7e2f_9.jpg",
+							"type": "text"
+						},
+						{
+							"key": "price_course",
+							"value": "199.00",
+							"type": "text"
+						},
+						{
+							"key": "date_created_course",
+							"value": "2024-11-25",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Registro de usuarios para nuestra API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email_instructor",
+							"value": "admin@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password_instructor",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/instructors?register=true&suffix=instructor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"instructors"
+					],
+					"query": [
+						{
+							"key": "register",
+							"value": "true"
+						},
+						{
+							"key": "suffix",
+							"value": "instructor"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Registro de usuarios para nuestra API desde una APP EXTERNA",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email_instructor",
+							"value": "admin@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password_instructor",
+							"value": "123456",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/instructors?register=true&suffix=instructor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"instructors"
+					],
+					"query": [
+						{
+							"key": "register",
+							"value": "true"
+						},
+						{
+							"key": "suffix",
+							"value": "instructor"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Login de usuarios para nuestra API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email_instructor",
+							"value": "admin@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password_instructor",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/instructors?login=true&suffix=instructor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"instructors"
+					],
+					"query": [
+						{
+							"key": "login",
+							"value": "true"
+						},
+						{
+							"key": "suffix",
+							"value": "instructor"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Extraemos los datos del formulario y procedemos a guardar el registro con token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id_instructor_course",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "title_course",
+							"value": "Aprende con PHP",
+							"type": "text"
+						},
+						{
+							"key": "description_course",
+							"value": "Sistema de ventas completo",
+							"type": "text"
+						},
+						{
+							"key": "image_course",
+							"value": "https://i.udemycdn.com/course/480x270/1265942_7e2f_9.jpg",
+							"type": "text"
+						},
+						{
+							"key": "price_course",
+							"value": "199.00",
+							"type": "text"
+						},
+						{
+							"key": "date_created_course",
+							"value": "2024-11-25",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/courses?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MzI4ODc3NDcsImV4cCI6MTczMjk3NDE0NywiZGF0YSI6eyJpZCI6NzcsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIn0sInNpZ25hdHVyZSI6IlNmbEt4d1JKU01lS0tGMlFUNGZ3cE1lSmYzNlBPazZ5SlZfYWRRc3N3NWMifQ.-shqJew77PK_h_rekxrpzxO56v1BstuHpYlcx-TxP_4&table=instructors&suffix=instructor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MzI4ODc3NDcsImV4cCI6MTczMjk3NDE0NywiZGF0YSI6eyJpZCI6NzcsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIn0sInNpZ25hdHVyZSI6IlNmbEt4d1JKU01lS0tGMlFUNGZ3cE1lSmYzNlBPazZ5SlZfYWRRc3N3NWMifQ.-shqJew77PK_h_rekxrpzxO56v1BstuHpYlcx-TxP_4"
+						},
+						{
+							"key": "table",
+							"value": "instructors"
+						},
+						{
+							"key": "suffix",
+							"value": "instructor"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Extraemos los datos del formulario y procedemos a guardar el registro sin token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id_instructor_course",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "title_course",
+							"value": "Aprende con PHP",
+							"type": "text"
+						},
+						{
+							"key": "description_course",
+							"value": "Sistema de ventas completo",
+							"type": "text"
+						},
+						{
+							"key": "image_course",
+							"value": "https://i.udemycdn.com/course/480x270/1265942_7e2f_9.jpg",
+							"type": "text"
+						},
+						{
+							"key": "price_course",
+							"value": "199.00",
+							"type": "text"
+						},
+						{
+							"key": "date_created_course",
+							"value": "2024-11-25",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/courses?token=no&except=id_course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "no"
+						},
+						{
+							"key": "table",
+							"value": "instructors",
+							"disabled": true
+						},
+						{
+							"key": "suffix",
+							"value": "instructor",
+							"disabled": true
+						},
+						{
+							"key": "except",
+							"value": "id_course"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT- Extraemos los datos del formulario y procedemos a modificar el registro",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id_instructor_course",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "title_course",
+							"value": "Aprende PHP desde cero",
+							"type": "text"
+						},
+						{
+							"key": "description_course",
+							"value": "Sistema de ventas completo",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image_course",
+							"value": "https://i.udemycdn.com/course/480x270/1265942_7e2f_9.jpg",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "price_course",
+							"value": "99.99",
+							"type": "text"
+						},
+						{
+							"key": "date_created_course",
+							"value": "2024-11-25",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/courses?id=32&nameId=id_course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "32"
+						},
+						{
+							"key": "nameId",
+							"value": "id_course"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - Eliminamos el registro de la base de datos",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id_instructor_course",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "title_course",
+							"value": "Aprende PHP desde cero",
+							"type": "text"
+						},
+						{
+							"key": "description_course",
+							"value": "Sistema de ventas completo",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image_course",
+							"value": "https://i.udemycdn.com/course/480x270/1265942_7e2f_9.jpg",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "price_course",
+							"value": "99.99",
+							"type": "text"
+						},
+						{
+							"key": "date_created_course",
+							"value": "2024-11-25",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/apirest-dinamica/courses?id=32&nameId=id_course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"apirest-dinamica",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "32"
+						},
+						{
+							"key": "nameId",
+							"value": "id_course"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
